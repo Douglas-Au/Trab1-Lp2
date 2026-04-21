@@ -6,7 +6,12 @@ import Entidades.Oportunidade;
 import Entidades.Docente;
 import Entidades.Oportunidade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InscricaoService {
+
+    private List<Inscricao> inscricoes = new ArrayList<>();
 
     public Inscricao inscrever(Discente discente, Oportunidade oportunidade){
         //TODO

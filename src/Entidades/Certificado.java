@@ -2,7 +2,7 @@ package Entidades;
 
 import java.time.LocalDate;
 
-public class Certificados {
+public class Certificado {
 
     enum status_assinatura{Pendente, Assinado}
 
@@ -13,13 +13,8 @@ public class Certificados {
     private int horas;
     private String certificado_path;
 
-    public Certificados(String uuid_hash, Discente discente, Oportunidade oportunidade, LocalDate data, int horas, String certificado_path) {
-        this.uuid_hash = uuid_hash;
-        this.discente = discente;
-        this.oportunidade = oportunidade;
-        this.data = data;
-        this.horas = horas;
-        this.certificado_path = certificado_path;
+    public Certificado() {
+        this.data = LocalDate.now();
     }
 
     public void gerarQRCode(){

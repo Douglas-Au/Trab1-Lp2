@@ -1,7 +1,5 @@
 package Services;
-
-import Entidades.Oportunidade;
-import Entidades.Usuario;
+import Entidades.*;
 
 import java.util.List;
 
