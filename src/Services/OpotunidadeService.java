@@ -1,17 +1,18 @@
-package Servicos;
+package Services;
 
 import Entidades.Oportunidade;
+import Entidades.Usuario;
 
 import java.util.List;
 
-public class OpotunidadeServico {
+public class OpotunidadeService {
 
-    public Oportunidade criar(Oportunidade oportunidade){
+    public Oportunidade criar(Oportunidade oportunidade, Usuario usuario){
         //TODO
         return null;
     }
 
-    public void publicar(Oportunidade oportunidade){
+    public void divulgar(Oportunidade oportunidade, Usuario usuario){
         //TODO
     }
 

@@ -1,12 +1,13 @@
-package Servicos;
+package Services;
 
 import Entidades.Discente;
 import Entidades.Inscricao;
 import Entidades.Oportunidade;
+import Entidades.Docente;
+import Entidades.Oportunidade;
 
-import java.util.List;
+public class InscricaoService {
 
-public class InscricaoServico {
     public Inscricao inscrever(Discente discente, Oportunidade oportunidade){
         //TODO
         return null;
@@ -22,10 +23,5 @@ public class InscricaoServico {
 
     public void rejeitar(Inscricao inscricao){
         //TODO
-    }
-
-    public List<Inscricao> listarPorDiscente(Discente discente){
-        //TODO
-        return null;
     }
 }
