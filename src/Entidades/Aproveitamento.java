@@ -3,6 +3,8 @@ package Entidades;
 import java.nio.file.Path;
 
 public class Aproveitamento {
+    enum Status{Pendente, Aprovado, Rejeitado}
+
     private Discente discente;
     private String descricao;
     private String instituicao;
