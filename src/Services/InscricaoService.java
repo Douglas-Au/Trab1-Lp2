@@ -5,6 +5,7 @@ import Entidades.Inscricao;
 import Entidades.Oportunidade;
 import Entidades.Docente;
 import Entidades.Oportunidade;
+import Enums.statusInscricao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,9 @@ public class InscricaoService {
     private List<Inscricao> inscricoes = new ArrayList<>();
 
     public Inscricao inscrever(Discente discente, Oportunidade oportunidade){
-        //TODO
-        return null;
+            Inscricao i = new Inscricao(oportunidade, discente, statusInscricao.Pendente, null);
+            inscricoes.add(i);
+        return i;
     }
 
     public void cancelar(Inscricao inscricao){

@@ -1,4 +1,5 @@
 package Entidades;
+import Enums.*;
 import java.util.List;
 
 

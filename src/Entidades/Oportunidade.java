@@ -38,6 +38,23 @@ public class Oportunidade {
         this.reponsavel = reponsavel;
     }
 
+    @Override
+    public String toString() {
+        return "Oportunidade{" +
+                "titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", status=" + status +
+                ", tipo=" + tipo +
+                ", modalidade=" + modalidade +
+                ", carga_horaria=" + carga_horaria +
+                ", vagas=" + vagas +
+                ", inicio=" + inicio +
+                ", fim=" + fim +
+                ", autor=" + autor +
+                ", reponsavel=" + reponsavel +
+                '}';
+    }
+
     public String getTitulo() {
         return titulo;
     }

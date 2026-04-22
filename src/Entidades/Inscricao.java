@@ -54,4 +54,14 @@ public class Inscricao {
     public void setMotivacao(String motivacao) {
         this.motivacao = motivacao;
     }
+
+    @Override
+    public String toString() {
+        return "Inscricao{" +
+                "oportunidade=" + oportunidade +
+                ", discente=" + discente +
+                ", status=" + status +
+                ", motivacao='" + motivacao + '\'' +
+                '}';
+    }
 }

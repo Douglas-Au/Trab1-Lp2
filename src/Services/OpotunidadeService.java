@@ -9,7 +9,7 @@ public class OpotunidadeService{
     private List<Oportunidade> oportunidades = new ArrayList<>();
 
     public Oportunidade criarOportunidade(Oportunidade oportunidade, Usuario usuario){
-        if( !usuario.getPapel().equals(Papel.DOCENTE) && !usuario.getPapel().equals(Papel.DISCENTE_DIRETOR)){
+        if( !usuario.getPapel().equals(Papel.DOCENTE) && !usuario.getPapel().equals(Papel.CORD_UCE)){
             System.out.println("Permissão negada");
             return null;
         }

@@ -1,5 +1,6 @@
 package Entidades;
 import java.time.LocalDate;
+import Enums.*;
 import java.util.List;
 
 public class DiscenteDiretor extends Discente{

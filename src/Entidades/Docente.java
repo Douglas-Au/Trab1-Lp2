@@ -1,5 +1,6 @@
 package Entidades;
 import java.time.LocalDate;
+import Enums.*;
 
 public class Docente extends Usuario{
     private String siape;
@@ -10,7 +11,7 @@ public class Docente extends Usuario{
         return;
     }
     public Docente(String nome, String email, String senha, Papel papel, Boolean ativo, String siape, String departamento) {
-        super(nome, email, senha, "Docente", ativo);
+        super(nome, email, senha, Papel.DOCENTE, ativo);
         this.siape = siape;
         this.departamento = departamento;
     }
