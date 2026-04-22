@@ -1,16 +1,14 @@
 package Entidades;
-
+import Enums.*;
 import java.nio.file.Path;
 
 public class Aproveitamento {
-    enum Status{Pendente, Aprovado, Rejeitado}
-
     private Discente discente;
     private String descricao;
     private String instituicao;
     private int horas;
     private String certificado_path;
-    private Status status;
+    private statusAproveitamento status;
     private Usuario avaliador;
     private String motivo_rejeicao;
 
@@ -19,13 +17,12 @@ public class Aproveitamento {
         return true;
     }
 
-    public Aproveitamento(Discente discente, String descricao, String instituicao, int horas, String certificado_path, Status status, Usuario avaliador, String motivo_rejeicao) {
+    public Aproveitamento(Discente discente, String descricao, String instituicao, int horas, String certificado_path, Usuario avaliador, String motivo_rejeicao) {
         this.discente = discente;
         this.descricao = descricao;
         this.instituicao = instituicao;
         this.horas = horas;
         this.certificado_path = certificado_path;
-        this.status = status;
         this.avaliador = avaliador;
         this.motivo_rejeicao = motivo_rejeicao;
     }
@@ -70,11 +67,11 @@ public class Aproveitamento {
         this.certificado_path = certificado_path;
     }
 
-    public Status getStatus() {
+    public statusAproveitamento getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(statusAproveitamento status) {
         this.status = status;
     }
 

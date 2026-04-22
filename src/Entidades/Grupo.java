@@ -1,20 +1,20 @@
 package Entidades;
+import Enums.*;
 
 public class Grupo {
-    enum Status{Ativo,Inativo}
 
     private String nome;
     private String tipo;
     private String email;
     private String descricao;
-    private Status status;
+    private statusGrupo status;
     private Docente responsavel;
 
     public void adcionarMenbro(Usuario usuario){
         //TODO
     }
 
-    public Grupo(String nome, String tipo, String email, String descricao, Status status, Docente responsavel) {
+    public Grupo(String nome, String tipo, String email, String descricao, statusGrupo status, Docente responsavel) {
         this.nome = nome;
         this.tipo = tipo;
         this.email = email;
@@ -55,11 +55,11 @@ public class Grupo {
         this.descricao = descricao;
     }
 
-    public Status getStatus() {
+    public statusGrupo getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(statusGrupo status) {
         this.status = status;
     }
 

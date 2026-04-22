@@ -1,11 +1,11 @@
 package Entidades;
+import Enums.*;
 
 public class Inscricao {
-    enum Status{Pendente,Aprovado,Rejeitado}
 
     private Oportunidade oportunidade;
     private Discente discente;
-    private Status status;
+    private statusInscricao status;
     private String motivacao;
 
     public void aprovar(){
@@ -16,7 +16,7 @@ public class Inscricao {
         //TODO
     }
 
-    public Inscricao(Oportunidade oportunidade, Discente discente, Status status, String motivacao) {
+    public Inscricao(Oportunidade oportunidade, Discente discente, statusInscricao status, String motivacao) {
         this.oportunidade = oportunidade;
         this.discente = discente;
         this.status = status;
@@ -39,11 +39,11 @@ public class Inscricao {
         this.discente = discente;
     }
 
-    public Status getStatus() {
+    public statusInscricao getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(statusInscricao status) {
         this.status = status;
     }
 

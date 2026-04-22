@@ -3,9 +3,6 @@ package Entidades;
 import java.time.LocalDate;
 
 public class Certificado {
-
-    enum status_assinatura{Pendente, Assinado}
-
     private String uuid_hash;
     private Discente discente;
     private Oportunidade oportunidade;

@@ -1,16 +1,13 @@
 package Entidades;
-
+import Enums.*;
 import java.time.LocalDate;
 
 public class Oportunidade {
-    enum Tipo{Projeto,Curso,Evento,Oficina}
-    enum Status{Pendente,Publicada,EmProgresso}
-    enum Modalidade{Pesencial,Remoto,Hibrido}
 
     private String titulo;
     private String descricao;
-    private Status status;
-    private Tipo tipo;
+    private statusOportunidade status;
+    private TipoOportunidade tipo;
     private Modalidade modalidade;
     private int carga_horaria;
     private int vagas;
@@ -27,7 +24,7 @@ public class Oportunidade {
         //TODO
     }
 
-    public Oportunidade(String titulo, String descricao, Status status, Tipo tipo, Modalidade modalidade, int carga_horaria, int vagas, LocalDate inicio, LocalDate fim, Usuario autor, Docente reponsavel) {
+    public Oportunidade(String titulo, String descricao, statusOportunidade status, TipoOportunidade tipo, Modalidade modalidade, int carga_horaria, int vagas, LocalDate inicio, LocalDate fim, Usuario autor, Docente reponsavel) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.status = status;
@@ -57,19 +54,19 @@ public class Oportunidade {
         this.descricao = descricao;
     }
 
-    public Status getStatus() {
+    public statusOportunidade getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(statusOportunidade status) {
         this.status = status;
     }
 
-    public Tipo getTipo() {
+    public TipoOportunidade getTipo() {
         return tipo;
     }
 
-    public void setTipo(Tipo tipo) {
+    public void setTipo(TipoOportunidade tipo) {
         this.tipo = tipo;
     }
 
