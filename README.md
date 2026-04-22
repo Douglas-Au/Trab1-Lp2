@@ -58,13 +58,13 @@ Enumerações utilizadas:
 
 ---
 
-### 🚀 `main`
+### `main`
 Classe principal para testes:
 - Main
 
 ---
 
-## ⚙️ Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 - Cadastro e login de usuários
 - Mudanca de Curso
