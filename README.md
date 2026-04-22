@@ -68,7 +68,7 @@ Classe principal para testes:
 
 - Cadastro e login de usuários
 - Mudanca de Curso
-- Criação e gerenciamento de oportunidades
+- Criação de oportunidades
 - Inscrição de discentes em oportunidades
 
 ---
