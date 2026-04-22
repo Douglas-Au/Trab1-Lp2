@@ -93,4 +93,8 @@ Os testes foram realizados por meio da classe `Main`, simulando:
 
 ##  Autor
 
-- Douglas Augusto de Brito Silva
+- DOUGLAS AUGUSTO DE BRITO E SILVA
+- MIQUEIAS LIMA BASTOS
+- LUIS HENRIQUE ANDRADE DE LIMA
+- JADYSON KAUA DOS SANTO BRAGA
+- LUCAS CAMPOS ANCHIETA
