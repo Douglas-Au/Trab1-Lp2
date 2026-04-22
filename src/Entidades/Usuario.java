@@ -1,4 +1,5 @@
 package Entidades;
+import Enums.*;
 
 import java.util.*;
 
@@ -10,12 +11,12 @@ public class Usuario {
     private Boolean ativo;
 
 
-    public Usuario(String nome, String email, String senha, String descricao, Boolean ativo) {
+    public Usuario(String nome, String email, String senha, Papel papel, Boolean ativo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.ativo = ativo;
-        this.papel = new Papel(descricao);
+        this.papel = papel;
     }
 
     public List<Oportunidade> obterOportunidades(){

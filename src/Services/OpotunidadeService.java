@@ -1,5 +1,6 @@
 package Services;
 import Entidades.*;
+import Enums.Papel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ public class OpotunidadeService{
     private List<Oportunidade> oportunidades = new ArrayList<>();
 
     public Oportunidade criarOportunidade(Oportunidade oportunidade, Usuario usuario){
-        if( !usuario.getPapel().getDescricao().equals("Docente") && !usuario.getPapel().getDescricao().equals("Diretor Discente")){
+        if( !usuario.getPapel().equals(Papel.DOCENTE) && !usuario.getPapel().equals(Papel.DISCENTE_DIRETOR)){
             System.out.println("Permissão negada");
             return null;
         }
