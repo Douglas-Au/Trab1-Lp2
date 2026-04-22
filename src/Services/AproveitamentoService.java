@@ -18,6 +18,11 @@ public class AproveitamentoService {
         return aproveitamento;
     }
 
+    public Boolean uploadCertificado(String path){
+        //TODO
+        return true;
+    }
+
     public void aprovar(Aproveitamento aproveitamento, Usuario usuario){
         //TODO aprovar
         //aproveitamento.setStatus();
@@ -42,4 +47,5 @@ public class AproveitamentoService {
     public List<Aproveitamento> getAproveitamentos() {
         return aproveitamentos;
     }
+
 }

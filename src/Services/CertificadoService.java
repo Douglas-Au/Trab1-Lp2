@@ -19,7 +19,7 @@ public class CertificadoService {
         return certificado;
     }
 
-    public Boolean validarCertificado(String uuid){
+    public Boolean validarAutentcidade(String uuid){
         for(Certificado c: certificados){
             if(c.getUuid_hash().equals(uuid)){
                 return true;

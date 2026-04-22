@@ -4,10 +4,8 @@ public class Papel {
     public String descricao;
     public Usuario usuario; //Talvez saia
 
-
-    public Papel(String descricao, Usuario usuario) {
+    public Papel(String descricao) {
         this.descricao = descricao;
-        this.usuario = usuario;
     }
 
     //Getters and setters

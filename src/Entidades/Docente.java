@@ -5,17 +5,12 @@ public class Docente extends Usuario{
     private String siape;
     private String departamento;
 
-    public Oportunidade criarOporttuniade(LocalDate Data){
-        //TODO
-        return null;
-    }
-
     public void registrarPlanoAtiviades(Oportunidade oportunidade, LocalDate data){
         //TODO
         return;
     }
     public Docente(String nome, String email, String senha, Papel papel, Boolean ativo, String siape, String departamento) {
-        super(nome, email, senha, papel, ativo);
+        super(nome, email, senha, "Docente", ativo);
         this.siape = siape;
         this.departamento = departamento;
     }

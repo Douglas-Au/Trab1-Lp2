@@ -8,17 +8,11 @@ public class DiscenteDiretor extends Discente{
     private LocalDate data_inicio;
     private LocalDate data_fim;
 
-    public Oportunidade criarOportunidade(LocalDate data){
-        //TODO
-        return null;
-    }
-
-    public DiscenteDiretor(String nome, String email, String senha, Papel papel, Boolean ativo, String matricula, int semestre_atual, List<Curso> curso, Grupo grupo, String cargo, LocalDate data_inicio, LocalDate data_fim) {
+    public DiscenteDiretor(String nome, String email, String senha, Papel papel, Boolean ativo, String matricula, int semestre_atual, Curso curso, Grupo grupo, String cargo) {
         super(nome, email, senha, papel, ativo, matricula, semestre_atual, curso);
         this.grupo = grupo;
         Cargo = cargo;
-        this.data_inicio = data_inicio;
-        this.data_fim = data_fim;
+        data_inicio = LocalDate.now();
     }
 
     public Grupo getGrupo() {

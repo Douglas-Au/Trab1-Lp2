@@ -18,10 +18,11 @@ public class Certificado {
         //TODO
     }
 
-    public Boolean gerarAutenticidade(String hash){
+    /*
+    public Boolean verificarAutenticidade(String hash){
         //TODO
         return true;
-    }
+    }*/
 
     public String getUuid_hash() {
         return uuid_hash;

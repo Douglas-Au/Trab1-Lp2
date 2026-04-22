@@ -5,12 +5,20 @@ import java.util.List;
 public class Discente extends Usuario{
     private String matricula;
     private int semestre_atual;
-    private List<Curso> curso;
+    private Curso curso;
 
-    public Discente(String nome, String email, String senha, Papel papel, Boolean ativo, String matricula, int semestre_atual, List<Curso> curso) {
+    public Discente(String nome, String email, String senha, Papel papel, Boolean ativo, String matricula, int semestre_atual, Curso curso) {
         super(nome, email, senha, papel, ativo);
         this.matricula = matricula;
         this.semestre_atual = semestre_atual;
+        this.curso = curso;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
         this.curso = curso;
     }
 

@@ -1,14 +1,17 @@
 package Entidades;
 import Enums.*;
 
-public class Grupo {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Grupo {
     private String nome;
     private String tipo;
     private String email;
     private String descricao;
     private statusGrupo status;
     private Docente responsavel;
+    private List<Discente> discentes = new ArrayList<>();
 
     public void adcionarMenbro(Usuario usuario){
         //TODO
@@ -21,6 +24,14 @@ public class Grupo {
         this.descricao = descricao;
         this.status = status;
         this.responsavel = responsavel;
+    }
+
+    public List<Discente> getDiscentes() {
+        return discentes;
+    }
+
+    public void setDiscentes(List<Discente> discentes) {
+        this.discentes = discentes;
     }
 
     public String getNome() {

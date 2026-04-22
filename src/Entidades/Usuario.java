@@ -10,12 +10,12 @@ public class Usuario {
     private Boolean ativo;
 
 
-    public Usuario(String nome, String email, String senha, Papel papel, Boolean ativo) {
+    public Usuario(String nome, String email, String senha, String descricao, Boolean ativo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.papel = papel;
         this.ativo = ativo;
+        this.papel = new Papel(descricao);
     }
 
     public List<Oportunidade> obterOportunidades(){

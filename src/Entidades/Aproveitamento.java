@@ -1,6 +1,5 @@
 package Entidades;
 import Enums.*;
-import java.nio.file.Path;
 
 public class Aproveitamento {
     private Discente discente;
@@ -12,10 +11,11 @@ public class Aproveitamento {
     private Usuario avaliador;
     private String motivo_rejeicao;
 
-    public Boolean uploadCertificado(Path file){
+    /*
+    public Boolean uploadCertificado(String path){
         //TODO
         return true;
-    }
+    }*/
 
     public Aproveitamento(Discente discente, String descricao, String instituicao, int horas, String certificado_path, Usuario avaliador, String motivo_rejeicao) {
         this.discente = discente;

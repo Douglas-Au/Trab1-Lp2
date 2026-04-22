@@ -1,13 +1,19 @@
 package Services;
 import Entidades.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class OpotunidadeService {
+public class OpotunidadeService{
+    private List<Oportunidade> oportunidades = new ArrayList<>();
 
-    public Oportunidade criar(Oportunidade oportunidade, Usuario usuario){
-        //TODO
-        return null;
+    public Oportunidade criarOportunidade(Oportunidade oportunidade, Usuario usuario){
+        if( !usuario.getPapel().getDescricao().equals("Docente") && !usuario.getPapel().getDescricao().equals("Diretor Discente")){
+            System.out.println("Permissão negada");
+            return null;
+        }
+        oportunidades.add(oportunidade);
+        return oportunidade;
     }
 
     public void divulgar(Oportunidade oportunidade, Usuario usuario){

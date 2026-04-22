@@ -1,4 +1,5 @@
 package Entidades;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Curso {
@@ -7,9 +8,11 @@ public class Curso {
     private int carga_horaria;
     private String versao_ppc;
 
+    private List<Discente> dicentes;
+
     public void atualizarPPC(int horas, String versao){
-        //TODO
-        return;
+        carga_horaria = horas;
+        versao_ppc = versao;
     }
 
     public Curso(String nome, int codigo, int carga_horaria, String versao_ppc) {
@@ -17,6 +20,15 @@ public class Curso {
         this.codigo = codigo;
         this.carga_horaria = carga_horaria;
         this.versao_ppc = versao_ppc;
+        this.dicentes = new ArrayList<>();
+    }
+
+    public List<Discente> getDicentes() {
+        return dicentes;
+    }
+
+    public void setDicentes(List<Discente> dicentes) {
+        this.dicentes = dicentes;
     }
 
     public String getNome() {
