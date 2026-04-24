@@ -9,8 +9,14 @@ A estrutura segue como referência os diagramas presentes na pasta compartilhada
 <img width="386" height="773" alt="image" src="https://github.com/user-attachments/assets/d906c801-b9cc-4850-a48e-ef77255cf606" />
 
     
-## 1.3 Diagrama de classes (Referencia)
+## 1.2 Diagrama de classes (Referencia para entidades e enums)
+Na pratica o pacote de entidades possuem as seguintes classes:
 <img width="1491" height="1346" alt="01 - Diagrama de classes drawio" src="https://github.com/user-attachments/assets/b4ea08c5-cd35-4e50-bfc7-496a25fa7cb7" />
+
+## 1.3 Diagrama Casos de Usuo (referencia para Serviços)
+O pacote de Serviços tem que prover as seguintes funcionalidades
+<img width="808" height="1131" alt="00 - Diagrama de casos de uso-Página-1 drawio" src="https://github.com/user-attachments/assets/b70fe417-f72b-4d61-989f-883b9d001e7b" />
+
 
 ## 1.4 Pacotes e suas funcionalidades no Projeto
  
