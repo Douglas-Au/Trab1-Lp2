@@ -1,14 +1,53 @@
 package Services;
 
+import Repository.*;
 import Entidades.*;
+import Enums.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 public class GrupoService {
-    private List<Grupo> grupos = new ArrayList<>();
 
-    public void adcionarMenbro(Grupo grupo,  Discente discente){
-        grupo.getDiscentes().add(discente);
+    private final GrupoRepository grupoRepo;
+
+    public GrupoService(GrupoRepository grupoRepo) {
+        this.grupoRepo = grupoRepo;
+    }
+
+    // retorna o Grupo criado em vez de void
+    public Grupo createGrupo(String nome, TipoGrupo tipo, String email, Docente responsavel, String descricao) {
+        Grupo g = new Grupo(nome, tipo, email, descricao, statusGrupo.Ativo, responsavel);
+        grupoRepo.addGrupo(responsavel, g);
+        return g;
+    }
+
+    public void adicionarMembro(Grupo grupo, Discente discente) {
+        Grupo grupoSalvo = grupoRepo.getGrupoFromDocente(grupo.getResponsavel(), grupo.getNome());
+
+        if (grupoSalvo == null) {
+            throw new IllegalArgumentException("Grupo não encontrado");
+        }
+
+        grupoSalvo.adicionarMembro(discente, GrupoFunc.MEMBRO, LocalDate.now());
+    }
+
+    public void removerMembro(Grupo grupo, Discente discente) {
+        Grupo grupoSalvo = grupoRepo.getGrupoFromDocente(grupo.getResponsavel(), grupo.getNome());
+
+        if (grupoSalvo == null) {
+            throw new IllegalArgumentException("Grupo não encontrado");
+        }
+
+        grupoSalvo.removerMembro(discente);
+    }
+
+    public void encerrarGrupo(Grupo grupo) {
+        Grupo grupoSalvo = grupoRepo.getGrupoFromDocente(grupo.getResponsavel(), grupo.getNome());
+
+        if (grupoSalvo == null) {
+            throw new IllegalArgumentException("Grupo não encontrado");
+        }
+
+        grupoSalvo.setStatus(statusGrupo.Inativo);
     }
 }

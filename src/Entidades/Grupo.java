@@ -1,23 +1,24 @@
 package Entidades;
+
 import Enums.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Grupo {
     private String nome;
-    private String tipo;
+    private TipoGrupo tipo;
     private String email;
     private String descricao;
     private statusGrupo status;
     private Docente responsavel;
-    private List<Discente> discentes = new ArrayList<>();
+    private List<MembroGrupo> membros = new ArrayList<>();
 
-    public void adcionarMenbro(Usuario usuario){
-        //TODO
-    }
+    private List<HistorioFuncGrupo> historicoFuncoes = new ArrayList<>();
 
-    public Grupo(String nome, String tipo, String email, String descricao, statusGrupo status, Docente responsavel) {
+    public Grupo(String nome, TipoGrupo tipo, String email, String descricao, statusGrupo status, Docente responsavel) {
         this.nome = nome;
         this.tipo = tipo;
         this.email = email;
@@ -26,12 +27,39 @@ public class Grupo {
         this.responsavel = responsavel;
     }
 
-    public List<Discente> getDiscentes() {
-        return discentes;
+    public void adicionarMembro(Discente aluno, GrupoFunc func, LocalDate dataInicio) {
+        membros.add(new MembroGrupo(aluno, func, dataInicio));
+        historicoFuncoes.add(new HistorioFuncGrupo(aluno, func, dataInicio));
     }
 
-    public void setDiscentes(List<Discente> discentes) {
-        this.discentes = discentes;
+    public void removerMembro(Discente aluno) {
+        // Encerra o período no cargo no histórico
+        LocalDate hoje = LocalDate.now();
+        historicoFuncoes.stream()
+                .filter(h -> h.getAluno().equals(aluno) && h.estaAtivo())
+                .forEach(h -> h.encerrarPeriodo(hoje));
+
+        membros.removeIf(m -> m.getDiscente().equals(aluno));
+    }
+
+    public List<HistorioFuncGrupo> getHistoricoFuncoes() {
+        return historicoFuncoes;
+    }
+
+    public List<HistorioFuncGrupo> getHistoricoFuncoesAluno(Discente aluno) {
+        return historicoFuncoes.stream()
+                .filter(h -> h.getAluno().equals(aluno))
+                .collect(Collectors.toList());
+    }
+
+    public List<HistorioFuncGrupo> getHistoricoFuncao(GrupoFunc func) {
+        return historicoFuncoes.stream()
+                .filter(h -> h.getFuncao().equals(func))
+                .collect(Collectors.toList());
+    }
+
+    public List<MembroGrupo> getMembros() {
+        return membros;
     }
 
     public String getNome() {
@@ -42,11 +70,11 @@ public class Grupo {
         this.nome = nome;
     }
 
-    public String getTipo() {
+    public TipoGrupo getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoGrupo tipo) {
         this.tipo = tipo;
     }
 
@@ -78,7 +106,4 @@ public class Grupo {
         return responsavel;
     }
 
-    public void setResponsavel(Docente responsavel) {
-        this.responsavel = responsavel;
-    }
 }
