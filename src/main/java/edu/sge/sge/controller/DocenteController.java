@@ -40,8 +40,12 @@ public class DocenteController {
     }
 
     @PostMapping
-    public Docente create(@RequestBody Docente docente) {
-        return docenteService.create(docente);
+    public ResponseEntity<?> create(@RequestBody Docente docente) {
+        try {
+            return ResponseEntity.ok(docenteService.create(docente));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")

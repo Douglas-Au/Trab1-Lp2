@@ -34,3 +34,6 @@ build/
 
 ### Claude ###
 CLAUDE.md
+
+### Banco de testes H2 ###
+db/

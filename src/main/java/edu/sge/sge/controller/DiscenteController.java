@@ -35,8 +35,12 @@ public class DiscenteController {
     }
 
     @PostMapping
-    public Discente create(@RequestBody Discente discente) {
-        return discenteService.create(discente);
+    public ResponseEntity<?> create(@RequestBody Discente discente) {
+        try {
+            return ResponseEntity.ok(discenteService.create(discente));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")

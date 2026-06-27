@@ -43,4 +43,7 @@ public class Aproveitamento {
 
     @Column(name = "data_atividade_fim")
     private LocalDate dataAtividadeFim;
+
+    @Column(name = "prazo_reenvio")
+    private LocalDate prazoReenvio;
 }
