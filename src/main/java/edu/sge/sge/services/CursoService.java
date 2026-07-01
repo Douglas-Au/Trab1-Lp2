@@ -27,6 +27,9 @@ public class CursoService {
     }
 
     public Curso create(Curso curso) {
+        if (cursoRepo.existsByCodigo(curso.getCodigo())) {
+            throw new IllegalArgumentException("Curso já cadastrado");
+        }
         return cursoRepo.save(curso);
     }
 
